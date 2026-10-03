@@ -1,0 +1,41 @@
+<div>
+  <div>
+    <h3>Datos Personales</h3>
+    
+    <label>Nombre:</label><br>
+    <input type="text" [(ngModel)]="txtNombre"><br><br>
+
+    <label>Apellido paterno:</label><br>
+    <input type="text" [(ngModel)]="txtPrimerApellido"><br><br>
+
+    <label>Apellido materno:</label><br>
+    <input type="text" [(ngModel)]="txtSegundoApellido"><br><br>
+
+    <h4>Fecha de nacimiento</h4>
+    <label>Día</label>
+    <input type="number" [(ngModel)]="numDia">
+    
+    <label>Mes</label>
+    <input type="number" [(ngModel)]="numMes">
+    
+    <label>Año</label>
+    <input type="number" [(ngModel)]="numAnioNacimiento"><br><br>
+
+    <h4>Sexo</h4>
+    <input type="radio" name="sexo" value="Masculino" [(ngModel)]="opcionSexo"> Masculino
+    <input type="radio" name="sexo" value="Femenino" [(ngModel)]="opcionSexo"> Femenino <br><br>
+
+    <button (click)="procesarFormulario()">imprimir</button>
+  </div>
+
+  <hr>
+  <br>
+
+  <div *ngIf="esVisibleResultado">
+    <h2>Hola {{ txtNombre }} {{ txtPrimerApellido }} {{ txtSegundoApellido }}</h2>
+    <h3>Tienes {{ totalEdad }} años</h3>
+    <h3>tu signo zodiacal</h3>
+    <h3>Es {{ nombreSigno }}</h3>
+    <img [src]="rutaImagenSigno" width="350">
+  </div>
+</div>
