@@ -1,5 +1,5 @@
 export interface Alumno {
-    matricula: '',
+    matricula: string,
     nombre: string,
     correo: string,
     materia: string
